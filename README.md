@@ -1,14 +1,15 @@
 ##Summarize a billion records using the Syncfusion Dashboard Platform###
-###Upload the DataSet to HDFS
-Perform the below steps to Upload the DataSet to HDFS.
+###Upload the data set to HDFS
+Perform the below steps to upload the data set to HDFS.
 
 1. Open the command pormpt and locate %HADOOP_HOME%\bin 
-2. Execute the command 
+2. Execute the  below command 
 
 	```hdfs dfs -put <localfolderpath> /SparkSQLDemo/```
 
 ###Syncfusion Bigdata ThriftApplication
 Steps to run the sample queries in Syncfusion Bigdata ThriftApplication
+Download the dataset from the following link [DataSet] (https://data.cityofnewyork.us/data?agency=Taxi+and+Limousine+Commission+%28TLC%29&cat=&type=new_view&browseSearch=&scope) 
 ####Creating the TABLE and loading the data into the TABLE
 
 1. Open and build the console application in Visual Studio.
@@ -17,17 +18,25 @@ Steps to run the sample queries in Syncfusion Bigdata ThriftApplication
 #####Syntax
 	Syncfusion.Bigdata.ThriftApplication.exe “Spark-Thrift Server hostname: Port” “Query”
 #####Query
-	Syncfusion.Bigdata.ThriftApplication.exe spark-thriftserverhostname:port "CREATE EXTERNAL table nyctrips(vendor_id string,pickup_datetime timestamp,dropoff_datetime timestamp,passenger_count double,trip_distance  double,pickup_longitude double,pickup_latitude double,rate_code double,store_and_fwd_flag string,dropoff_longitude double,dropoff_latitude double,payment_type  string,fare_amount double,surcharge double,mta_tax double,tip_amount double,tolls_amount double,total_amount double) ROW FORMAT DELIMITED FIELDS TERMINATED BY ','"
-	Syncfusion.Bigdata.ThriftApplication.exe spark-thriftserverhostname:port "LOAD DATA INPATH '/SparkSQLDemo/yellow_tripdata_2009.csv' INTO TABLE nyctrips"
-	Syncfusion.Bigdata.ThriftApplication.exe spark-thriftserverhostname:port "LOAD DATA INPATH '/SparkSQLDemo/yellow_tripdata_2010.csv' INTO TABLE nyctrips"
-	Syncfusion.Bigdata.ThriftApplication.exe spark-thriftserverhostname:port "LOAD DATA INPATH '/SparkSQLDemo/yellow_tripdata_2011.csv' INTO TABLE nyctrips"
-	Syncfusion.Bigdata.ThriftApplication.exe spark-thriftserverhostname:port "LOAD DATA INPATH '/SparkSQLDemo/yellow_tripdata_2012.csv' INTO TABLE nyctrips"
-	Syncfusion.Bigdata.ThriftApplication.exe spark-thriftserverhostname:port "LOAD DATA INPATH '/SparkSQLDemo/yellow_tripdata_2013.csv' INTO TABLE nyctrips"
-	Syncfusion.Bigdata.ThriftApplication.exe spark-thriftserverhostname:port "LOAD DATA INPATH '/SparkSQLDemo/nyc_taxi_data.csv' INTO TABLE nyctrips"
-	Syncfusion.Bigdata.ThriftApplication.exe spark-thriftserverhostname:port "LOAD DATA INPATH '/SparkSQLDemo/yellow_tripdata_2015-01-06.csv' INTO TABLE nyctrips"
+	"CREATE EXTERNAL table nyctrips(vendor_id string,pickup_datetime timestamp,dropoff_datetime timestamp,passenger_count double,trip_distance  double,pickup_longitude double,pickup_latitude double,rate_code double,store_and_fwd_flag string,dropoff_longitude double,dropoff_latitude double,payment_type  string,fare_amount double,surcharge double,mta_tax double,tip_amount double,tolls_amount double,total_amount double) ROW FORMAT DELIMITED FIELDS TERMINATED BY ','"
+	"LOAD DATA INPATH '/SparkSQLDemo/yellow_tripdata_2009.csv' INTO TABLE nyctrips"
+	"LOAD DATA INPATH '/SparkSQLDemo/yellow_tripdata_2010.csv' INTO TABLE nyctrips"
+	"LOAD DATA INPATH '/SparkSQLDemo/yellow_tripdata_2011.csv' INTO TABLE nyctrips"
+	"LOAD DATA INPATH '/SparkSQLDemo/yellow_tripdata_2012.csv' INTO TABLE nyctrips"
+	"LOAD DATA INPATH '/SparkSQLDemo/yellow_tripdata_2013.csv' INTO TABLE nyctrips"
+	"LOAD DATA INPATH '/SparkSQLDemo/nyc_taxi_data.csv' INTO TABLE nyctrips"
+	"LOAD DATA INPATH '/SparkSQLDemo/yellow_tripdata_2015-01-06.csv' INTO TABLE nyctrips"
+#####Examples
+Example to create table **nyctrips**
 
-####Caching the Created table 
-1. Execute the command by passing it as arrgument to the application 
+	Syncfusion.Bigdata.ThriftApplication.exe spark-thriftserverhostname:port "CREATE EXTERNAL table nyctrips(vendor_id string,pickup_datetime timestamp,dropoff_datetime timestamp,passenger_count double,trip_distance  double,pickup_longitude double,pickup_latitude double,rate_code double,store_and_fwd_flag string,dropoff_longitude double,dropoff_latitude double,payment_type  string,fare_amount double,surcharge double,mta_tax double,tip_amount double,tolls_amount double,total_amount double) ROW FORMAT DELIMITED FIELDS TERMINATED BY ','"
+	
+Example to load the data set to table
+
+	Syncfusion.Bigdata.ThriftApplication.exe spark-thriftserverhostname:port "LOAD DATA INPATH '/SparkSQLDemo/yellow_tripdata_2009.csv' INTO TABLE nyctrips"
+	
+####Cache table 
+1. Execute the command by passing it as argument to the application 
 
 	```Syncfusion.Bigdata.ThriftApplication.exe spark-thriftserverhostname:port "cache table nyctrips"```
 
@@ -46,6 +55,19 @@ By Using SQL Context, we are Partitioning the Table **nyctrips** by YEAR using s
 	
 	```scala > var partitionByYear = nycTripsData.repartition(year($"dropoff_datetime"))```
 	
-  2. Save the partitioned result into the new Table "nyctrips_partitionbyyear"```
+  2. Save the partitioned result into the new Table "nyctrips_partitionbyyear"
 	
 	```scala > partitionByYear.saveAsTable("nyctrips_partitionbyyear")```
+
+###License
+>Copyright 2016 Syncfusion Inc.
+
+>Licensed under the Apache License, Version 2.0 (the "License");
+>you may not use this file except in compliance with the License.
+>You may obtain a copy of the License at
+    <http://www.apache.org/licenses/LICENSE-2.0>
+>Unless required by applicable law or agreed to in writing, software
+>distributed under the License is distributed on an "AS IS" BASIS,
+>WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+>See the License for the specific language governing permissions and
+>limitations under the License.
