@@ -22,7 +22,7 @@ Steps to run the sample queries in Syncfusion Bigdata ThriftApplication
 	LOAD DATA INPATH '/SparkSQLDemo/yellow_tripdata_2012.csv' INTO TABLE nyctrips
 	LOAD DATA INPATH '/SparkSQLDemo/yellow_tripdata_2013.csv' INTO TABLE nyctrips
 	LOAD DATA INPATH '/SparkSQLDemo/nyc_taxi_data.csv' INTO TABLE nyctrips
-	LOAD DATA INPATH '/SparkSQLDemo/yellow_tripdata_2015-01-06.csv' INTO TABLE nyctrips"
+	LOAD DATA INPATH '/SparkSQLDemo/yellow_tripdata_2015-01-06.csv' INTO TABLE nyctrips
 
 ####Create and load the data into the Table 
 
@@ -38,11 +38,12 @@ Command to create table **nyctrips**
 Command to load the data to table
 
 	Syncfusion.Bigdata.ThriftApplication.exe spark-thriftserverhostname:port "LOAD DATA INPATH '/SparkSQLDemo/yellow_tripdata_2009.csv' INTO TABLE nyctrips"
-	Syncfusion.Bigdata.ThriftApplication.exe spark-thriftserverhostname:port
-	Syncfusion.Bigdata.ThriftApplication.exe spark-thriftserverhostname:port
-	Syncfusion.Bigdata.ThriftApplication.exe spark-thriftserverhostname:port
-	Syncfusion.Bigdata.ThriftApplication.exe spark-thriftserverhostname:port
-	Syncfusion.Bigdata.ThriftApplication.exe spark-thriftserverhostname:port
+	Syncfusion.Bigdata.ThriftApplication.exe spark-thriftserverhostname:port "LOAD DATA INPATH '/SparkSQLDemo/yellow_tripdata_2010.csv' INTO TABLE nyctrips"
+	Syncfusion.Bigdata.ThriftApplication.exe spark-thriftserverhostname:port "LOAD DATA INPATH '/SparkSQLDemo/yellow_tripdata_2011.csv' INTO TABLE nyctrips"
+	Syncfusion.Bigdata.ThriftApplication.exe spark-thriftserverhostname:port "LOAD DATA INPATH '/SparkSQLDemo/yellow_tripdata_2012.csv' INTO TABLE nyctrips"
+	Syncfusion.Bigdata.ThriftApplication.exe spark-thriftserverhostname:port "LOAD DATA INPATH '/SparkSQLDemo/yellow_tripdata_2013.csv' INTO TABLE nyctrips"
+	Syncfusion.Bigdata.ThriftApplication.exe spark-thriftserverhostname:port "LOAD DATA INPATH '/SparkSQLDemo/nyc_taxi_data.csv' INTO TABLE nyctrips"
+	Syncfusion.Bigdata.ThriftApplication.exe spark-thriftserverhostname:port "LOAD DATA INPATH '/SparkSQLDemo/yellow_tripdata_2015-01-06.csv' INTO TABLE nyctrips""
 	
 ####Caching the table 
 	Execute the query (nyctrips table) using below command.
