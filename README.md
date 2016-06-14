@@ -12,11 +12,6 @@ Perform the below steps to upload the data set to HDFS.
 ###Syncfusion Bigdata ThriftApplication
 Steps to run the sample queries in Syncfusion Bigdata ThriftApplication
 
-####Create and load the data into the Table 
-
-1. Open and build the console application in Visual Studio.
-2. Run using below command
-
 #####Syntax
 	Syncfusion.Bigdata.ThriftApplication.exe “Spark-Thrift Server hostname: Port” “Query”
 #####Query
@@ -28,7 +23,14 @@ Steps to run the sample queries in Syncfusion Bigdata ThriftApplication
 	LOAD DATA INPATH '/SparkSQLDemo/yellow_tripdata_2013.csv' INTO TABLE nyctrips
 	LOAD DATA INPATH '/SparkSQLDemo/nyc_taxi_data.csv' INTO TABLE nyctrips
 	LOAD DATA INPATH '/SparkSQLDemo/yellow_tripdata_2015-01-06.csv' INTO TABLE nyctrips"
-#####Examples
+
+####Create and load the data into the Table 
+
+1. Open and build the console application in Visual Studio.
+
+2. Run using below command
+
+#####Commands
 Command to create table **nyctrips**
 
 	Syncfusion.Bigdata.ThriftApplication.exe spark-thriftserverhostname:port "CREATE EXTERNAL table nyctrips(vendor_id string,pickup_datetime timestamp,dropoff_datetime timestamp,passenger_count double,trip_distance  double,pickup_longitude double,pickup_latitude double,rate_code double,store_and_fwd_flag string,dropoff_longitude double,dropoff_latitude double,payment_type  string,fare_amount double,surcharge double,mta_tax double,tip_amount double,tolls_amount double,total_amount double) ROW FORMAT DELIMITED FIELDS TERMINATED BY ','"
@@ -36,9 +38,14 @@ Command to create table **nyctrips**
 Command to load the data to table
 
 	Syncfusion.Bigdata.ThriftApplication.exe spark-thriftserverhostname:port "LOAD DATA INPATH '/SparkSQLDemo/yellow_tripdata_2009.csv' INTO TABLE nyctrips"
+	Syncfusion.Bigdata.ThriftApplication.exe spark-thriftserverhostname:port
+	Syncfusion.Bigdata.ThriftApplication.exe spark-thriftserverhostname:port
+	Syncfusion.Bigdata.ThriftApplication.exe spark-thriftserverhostname:port
+	Syncfusion.Bigdata.ThriftApplication.exe spark-thriftserverhostname:port
+	Syncfusion.Bigdata.ThriftApplication.exe spark-thriftserverhostname:port
 	
-####Cache table 
-1. Execute the command by passing it as argument to the application 
+####Caching the table 
+	Execute the query (nyctrips table) using below command.
 
 	```Syncfusion.Bigdata.ThriftApplication.exe spark-thriftserverhostname:port "cache table nyctrips"```
 
