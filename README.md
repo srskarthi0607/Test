@@ -40,7 +40,7 @@ By Using SQL Context, we are Partitioning the Table **nyctrips** by YEAR using s
 		
 2. After starting the spark-shell pass the command as below
 	
-  1. Load the nyctrips table data into the Data Frame```
+  1. Load the nyctrips table data into the Data Frame
 
 	```scala > var nycTripsData = sqlContext.sql("select * from nyctrips")```
 	
