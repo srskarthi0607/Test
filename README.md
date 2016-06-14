@@ -46,7 +46,7 @@ Command to load the data to table
 	Syncfusion.Bigdata.ThriftApplication.exe spark-thriftserverhostname:port "LOAD DATA INPATH '/SparkSQLDemo/yellow_tripdata_2015-01-06.csv' INTO TABLE nyctrips""
 	
 ####Caching the table 
-	Execute the query (nyctrips table) using below command.
+Execute the query (nyctrips table) using below command.
 
 	```Syncfusion.Bigdata.ThriftApplication.exe spark-thriftserverhostname:port "cache table nyctrips"```
 
