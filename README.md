@@ -2,14 +2,16 @@
 ###Upload the data set to HDFS
 Perform the below steps to upload the data set to HDFS.
 
-1. Open the command pormpt and locate %HADOOP_HOME%\bin 
-2. Execute the  below command 
+1. ownload the dataset from the following link [DataSet] (https://data.cityofnewyork.us/data?agency=Taxi+and+Limousine+Commission+%28TLC%29&cat=&type=new_view&browseSearch=&scope) 
+
+2. Open the command pormpt and locate %HADOOP_HOME%\bin 
+3. Execute the  below command 
 
 	```hdfs dfs -put <localfolderpath> /SparkSQLDemo/```
 
 ###Syncfusion Bigdata ThriftApplication
 Steps to run the sample queries in Syncfusion Bigdata ThriftApplication
-Download the dataset from the following link [DataSet] (https://data.cityofnewyork.us/data?agency=Taxi+and+Limousine+Commission+%28TLC%29&cat=&type=new_view&browseSearch=&scope) 
+
 ####Creating the TABLE and loading the data into the TABLE
 
 1. Open and build the console application in Visual Studio.
