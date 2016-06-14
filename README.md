@@ -12,7 +12,7 @@ Perform the below steps to upload the data set to HDFS.
 ###Syncfusion Bigdata ThriftApplication
 Steps to run the sample queries in Syncfusion Bigdata ThriftApplication
 
-####Creating the TABLE and loading the data into the TABLE
+####Creat TABLE and load the data into the TABLE
 
 1. Open and build the console application in Visual Studio.
 2. Run using below command
@@ -33,7 +33,7 @@ Example to create table **nyctrips**
 
 	Syncfusion.Bigdata.ThriftApplication.exe spark-thriftserverhostname:port "CREATE EXTERNAL table nyctrips(vendor_id string,pickup_datetime timestamp,dropoff_datetime timestamp,passenger_count double,trip_distance  double,pickup_longitude double,pickup_latitude double,rate_code double,store_and_fwd_flag string,dropoff_longitude double,dropoff_latitude double,payment_type  string,fare_amount double,surcharge double,mta_tax double,tip_amount double,tolls_amount double,total_amount double) ROW FORMAT DELIMITED FIELDS TERMINATED BY ','"
 	
-Example to load the data set to table
+Example to load the data to table
 
 	Syncfusion.Bigdata.ThriftApplication.exe spark-thriftserverhostname:port "LOAD DATA INPATH '/SparkSQLDemo/yellow_tripdata_2009.csv' INTO TABLE nyctrips"
 	
@@ -42,8 +42,8 @@ Example to load the data set to table
 
 	```Syncfusion.Bigdata.ThriftApplication.exe spark-thriftserverhostname:port "cache table nyctrips"```
 
-####Partitioning the Table as per the YEAR 
-By Using SQL Context, we are Partitioning the Table **nyctrips** by YEAR using spark-shell
+####Partitioning the table as per the YEAR 
+By using SQL context, we are partitioning the table **nyctrips** by YEAR in spark-shell
 
 1. Open the SPARK-SHELL by using the command
 
@@ -62,14 +62,16 @@ By Using SQL Context, we are Partitioning the Table **nyctrips** by YEAR using s
 	```scala > partitionByYear.saveAsTable("nyctrips_partitionbyyear")```
 
 ###License
->Copyright 2016 Syncfusion Inc.
+Copyright 2016 Syncfusion Inc.
 
->Licensed under the Apache License, Version 2.0 (the "License");
->you may not use this file except in compliance with the License.
->You may obtain a copy of the License at
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
     <http://www.apache.org/licenses/LICENSE-2.0>
->Unless required by applicable law or agreed to in writing, software
->distributed under the License is distributed on an "AS IS" BASIS,
->WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
->See the License for the specific language governing permissions and
->limitations under the License.
+    
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
