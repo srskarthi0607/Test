@@ -33,6 +33,7 @@ Steps to run the sample queries in Syncfusion Bigdata ThriftApplication
 
 ####Partitioning the Table as per the YEAR 
 By Using SQL Context, we are Partitioning the Table **nyctrips** by YEAR using spark-shell
+
 1. Open the SPARK-SHELL by using the command
 
 	%SAPRK_HOME%\bin > spark-shell --master yarn-client
